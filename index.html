@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Prosperline Digital offers photography, video coverage, printing, graphic design, branding, passport photos, computer training and more.">
+  <meta name="theme-color" content="#0757b8">
+  <title>Prosperline Digital | Creative & Digital Services</title>
+  <style>
+    :root {
+      --blue: #0757b8;
+      --blue-dark: #073a78;
+      --blue-light: #eaf3ff;
+      --ink: #14233b;
+      --muted: #61718a;
+      --white: #fff;
+      --line: #dce7f5;
+      --shadow: 0 18px 48px rgba(7, 57, 120, .12);
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0; font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ink); background: var(--white); line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .wrap { width: min(1120px, 92%); margin: auto; }
+    header { position: sticky; top: 0; z-index: 10; background: rgba(255,255,255,.95); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+    .nav { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 74px; }
+    .brand { display: flex; align-items: center; gap: 11px; font-weight: 800; color: var(--blue-dark); letter-spacing: -.3px; }
+    .brand-mark { width: 42px; height: 42px; display: grid; place-items: center; border-radius: 12px; color: white; background: linear-gradient(135deg, var(--blue), #39a4ff); font-weight: 900; }
+    nav { display: flex; gap: 24px; align-items: center; font-size: .94rem; color: #3e506b; }
+    nav a:hover { color: var(--blue); }
+    .btn { display: inline-flex; justify-content: center; align-items: center; gap: 9px; padding: 12px 20px; border-radius: 999px; background: var(--blue); color: white; font-weight: 700; border: 1px solid var(--blue); transition: .2s; }
+    .btn:hover { background: var(--blue-dark); transform: translateY(-1px); }
+    .btn-outline { color: var(--blue); background: white; }
+    .btn-outline:hover { color: white; }
+    .hero { padding: 86px 0 76px; background: radial-gradient(circle at 85% 15%, #d8ecff 0, transparent 32%), linear-gradient(135deg, #f8fbff, #edf5ff); overflow: hidden; }
+    .hero-grid { display: grid; grid-template-columns: 1.15fr .85fr; align-items: center; gap: 52px; }
+    .eyebrow { display: inline-block; color: var(--blue); background: #e0efff; border-radius: 999px; padding: 7px 13px; font-size: .82rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
+    h1 { font-size: clamp(2.5rem, 5vw, 4.4rem); line-height: 1.08; letter-spacing: -2px; margin: 18px 0; }
+    h1 span { color: var(--blue); }
+    .hero p { max-width: 590px; color: var(--muted); font-size: 1.12rem; }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .hero-card { min-height: 360px; border-radius: 30px; padding: 30px; color: white; background: linear-gradient(145deg, #0757b8, #06366f); box-shadow: var(--shadow); position: relative; display: flex; flex-direction: column; justify-content: space-between; }
+    .hero-card:before { content: ""; position: absolute; width: 230px; height: 230px; right: -45px; top: -50px; border: 35px solid rgba(255,255,255,.12); border-radius: 50%; }
+    .hero-card .big { font-size: 4.2rem; line-height: 1; font-weight: 900; letter-spacing: -4px; }
+    .hero-card .mini { font-size: .9rem; opacity: .85; }
+    .service-pills { display: flex; flex-wrap: wrap; gap: 9px; margin-top: 24px; }
+    .service-pills span { background: rgba(255,255,255,.13); border: 1px solid rgba(255,255,255,.2); padding: 8px 12px; border-radius: 999px; font-size: .85rem; }
+    section { padding: 76px 0; }
+    .section-head { max-width: 680px; margin-bottom: 34px; }
+    .section-head h2 { font-size: clamp(2rem, 3vw, 2.8rem); line-height: 1.15; margin: 12px 0; letter-spacing: -1px; }
+    .section-head p { color: var(--muted); margin: 0; }
+    .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+    .service { padding: 25px; border: 1px solid var(--line); border-radius: 20px; background: white; transition: .2s; }
+    .service:hover { transform: translateY(-4px); box-shadow: var(--shadow); border-color: #b8d5f8; }
+    .icon { width: 48px; height: 48px; display: grid; place-items: center; border-radius: 14px; color: var(--blue); background: var(--blue-light); font-size: 1.4rem; }
+    .service h3 { margin: 15px 0 7px; font-size: 1.12rem; }
+    .service p { color: var(--muted); margin: 0; font-size: .95rem; }
+    .about { background: #f5f9ff; }
+    .about-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 48px; align-items: center; }
+    .about-panel { padding: 34px; background: white; border: 1px solid var(--line); border-radius: 24px; box-shadow: var(--shadow); }
+    .about-panel h3 { margin-top: 0; font-size: 1.5rem; }
+    .checklist { list-style: none; padding: 0; margin: 18px 0 0; }
+    .checklist li { padding: 9px 0; color: #3c4e67; }
+    .checklist li:before { content: "✓"; color: var(--blue); font-weight: 900; margin-right: 10px; }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; }
+    .contact-card { border-radius: 22px; padding: 28px; background: var(--blue-light); }
+    .contact-card h3 { margin-top: 0; }
+    .contact-card p { color: var(--muted); }
+    .contact-line { margin: 12px 0; font-weight: 650; }
+    footer { background: #082d5c; color: #dceaff; padding: 28px 0; font-size: .9rem; }
+    footer .foot { display: flex; justify-content: space-between; gap: 18px; flex-wrap: wrap; }
+    .whatsapp-float { position: fixed; right: 20px; bottom: 20px; z-index: 20; box-shadow: 0 8px 25px rgba(0,0,0,.18); }
+    @media (max-width: 800px) {
+      nav { gap: 12px; font-size: .85rem; }
+      .hero-grid, .about-grid, .contact-grid { grid-template-columns: 1fr; }
+      .hero { padding: 60px 0; }
+      .hero-card { min-height: 280px; }
+      .services { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 560px) {
+      .nav { min-height: 66px; }
+      nav a:not(.nav-cta) { display: none; }
+      .services { grid-template-columns: 1fr; }
+      h1 { letter-spacing: -1.2px; }
+      section { padding: 58px 0; }
+      .hero-card .big { font-size: 3.3rem; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap nav">
+      <a class="brand" href="#home" aria-label="Prosperline Digital home">
+        <span class="brand-mark">PD</span>
+        <span>Prosperline Digital</span>
+      </a>
+      <nav aria-label="Main navigation">
+        <a href="#services">Services</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <a class="btn nav-cta" href="https://wa.me/2347088371017" target="_blank" rel="noopener">WhatsApp Us</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="wrap hero-grid">
+        <div>
+          <span class="eyebrow">Creative • Digital • Reliable</span>
+          <h1>Ideas made clear.<br><span>Memories made lasting.</span></h1>
+          <p>Welcome to Prosperline Digital — your trusted partner for photography, video coverage, printing, design, branding and practical digital services.</p>
+          <div class="hero-actions">
+            <a class="btn" href="https://wa.me/2347088371017" target="_blank" rel="noopener">Chat on WhatsApp ↗</a>
+            <a class="btn btn-outline" href="#services">Explore Our Services</a>
+          </div>
+        </div>
+        <div class="hero-card" aria-label="Prosperline Digital service highlights">
+          <div>
+            <div class="mini">YOUR CREATIVE & DIGITAL PARTNER</div>
+            <div class="big">PRO<br>SPER</div>
+            <p>Professional service. Creative results.</p>
+          </div>
+          <div class="service-pills">
+            <span>Photography</span><span>Printing</span><span>Video</span><span>Branding</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">What We Do</span>
+          <h2>Services to help you create, capture and grow</h2>
+          <p>From important life moments to business visibility, we bring care and creativity to every project.</p>
+        </div>
+        <div class="services">
+          <article class="service"><div class="icon">📸</div><h3>Photography</h3><p>Portraits, studio photography and memorable moments captured with care.</p></article>
+          <article class="service"><div class="icon">🎥</div><h3>Video Coverage</h3><p>Coverage for weddings, birthdays, church programs and special events.</p></article>
+          <article class="service"><div class="icon">🖨️</div><h3>General Printing</h3><p>Quality printing for business, events, school and personal needs.</p></article>
+          <article class="service"><div class="icon">🎨</div><h3>Graphic Design</h3><p>Flyers, banners, cards and promotional designs that communicate clearly.</p></article>
+          <article class="service"><div class="icon">👕</div><h3>T-Shirt & Brand Printing</h3><p>Custom branding for groups, businesses, events and organizations.</p></article>
+          <article class="service"><div class="icon">🪧</div><h3>Flex Banner Printing</h3><p>Banner design and printing for celebrations, promotions and announcements.</p></article>
+          <article class="service"><div class="icon">🖼️</div><h3>Photo Enlargement & Photo Books</h3><p>Preserve your favorite memories with enlarged photos and keepsake books.</p></article>
+          <article class="service"><div class="icon">🪪</div><h3>Passport Photography</h3><p>Passport-size photos for documents and official applications.</p></article>
+          <article class="service"><div class="icon">💻</div><h3>Computer Training</h3><p>Practical computer lessons for beginners and learners building digital skills.</p></article>
+          <article class="service"><div class="icon">🔌</div><h3>Phone Charging</h3><p>Convenient phone charging service for customers in the area.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="wrap about-grid">
+        <div class="section-head">
+          <span class="eyebrow">About Prosperline</span>
+          <h2>Dependable service, thoughtful details</h2>
+          <p>Prosperline Digital is here to support individuals, families, churches, schools and businesses with creative services and digital solutions.</p>
+        </div>
+        <div class="about-panel">
+          <h3>Why work with us?</h3>
+          <ul class="checklist">
+            <li>Friendly and customer-focused service</li>
+            <li>Creative designs for your needs</li>
+            <li>Support for events and business projects</li>
+            <li>A range of services in one place</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap">
+        <div class="section-head">
+          <span class="eyebrow">Get in Touch</span>
+          <h2>Let's work on your next project</h2>
+          <p>Contact us to ask about a service, request a quote or discuss your project.</p>
+        </div>
+        <div class="contact-grid">
+          <div class="contact-card">
+            <h3>Contact Details</h3>
+            <div class="contact-line">📞 <a href="tel:+2347088371017">07088371017</a></div>
+            <div class="contact-line">📍 Ohoffia Ukawu, by Abaomege Okposi Express</div>
+            <p>For bookings and inquiries, WhatsApp us directly.</p>
+            <a class="btn" href="https://wa.me/2347088371017" target="_blank" rel="noopener">Start a WhatsApp Chat ↗</a>
+          </div>
+          <div class="contact-card">
+            <h3>Have a project in mind?</h3>
+            <p>Tell us what you need — photography, printing, branding, design or training. We will be glad to hear from you.</p>
+            <a class="btn btn-outline" href="tel:+2347088371017">Call Prosperline Digital</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap foot">
+      <span>© <span id="year"></span> Prosperline Digital. All rights reserved.</span>
+      <span>Creative • Digital • Reliable</span>
+    </div>
+  </footer>
+
+  <a class="btn whatsapp-float" href="https://wa.me/2347088371017" target="_blank" rel="noopener" aria-label="Chat with Prosperline Digital on WhatsApp">WhatsApp ↗</a>
+  <script>document.getElementById("year").textContent = new Date().getFullYear();</script>
+</body>
+</html>
